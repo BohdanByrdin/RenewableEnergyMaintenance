@@ -1,0 +1,52 @@
+@startuml use-case-model
+title ARC Maintenance Coordination System – Use-Case Model
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor #F5F9FF
+  BorderColor #3A6EA5
+}
+
+actor "Office staff" as Office
+actor "Technical lead" as Lead
+actor "Technician" as Tech
+actor "Parts coordinator" as Parts
+actor "Service manager" as Manager
+
+rectangle "ARC Maintenance Coordination System" {
+  usecase "UC-01\nRegister Fault Report" as UC01
+  usecase "UC-02\nSchedule Service Visit" as UC02
+  usecase "UC-03\nRecord Customer Approval" as UC03
+  usecase "UC-04\nMaintain Customer and\nInstallation Records" as UC04
+  usecase "UC-12\nIssue Customer\nProgress Update" as UC12
+
+  usecase "UC-05\nAssess Fault and\nDetermine Response" as UC05
+  usecase "UC-06\nAuthorise Return\nto Service" as UC06
+
+  usecase "UC-07\nRecord Visit Findings\nand Work Outcome" as UC07
+  usecase "UC-08\nComplete Return-to-Service\nChecks" as UC08
+
+  usecase "UC-09\nCheck Parts Availability" as UC09
+  usecase "UC-10\nRecord Parts Movements" as UC10
+
+  usecase "UC-11\nMonitor Maintenance\nOperations" as UC11
+}
+
+Office -- UC01
+Office -- UC02
+Office -- UC03
+Office -- UC04
+Office -- UC12
+
+Lead -- UC05
+Lead -- UC06
+
+Tech -- UC07
+Tech -- UC08
+
+Parts -- UC09
+Parts -- UC10
+
+Manager -- UC11
+@enduml

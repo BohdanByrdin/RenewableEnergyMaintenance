@@ -1,0 +1,127 @@
+@startuml domain-model
+title ARC Maintenance Coordination – Conceptual Domain Model
+hide circle
+hide methods
+skinparam classAttributeIconSize 0
+skinparam nodesep 60
+skinparam ranksep 70
+skinparam class {
+  BackgroundColor #F5F9FF
+  BorderColor #3A6EA5
+}
+
+class Customer {
+  name
+  contactDetails
+}
+
+class Site {
+  address
+  accessRequirements
+  gateCode
+  escortRequired
+}
+
+class Installation {
+  technologyType
+  returnToServiceStatus
+  returnToServiceDate [0..1]
+}
+
+class Component {
+  componentType
+  manufacturer
+  model [0..1]
+  serialNumber [0..1]
+  warrantyDetails [0..1]
+}
+
+class "Service Agreement" as ServiceAgreement {
+  startDate
+  endDate
+  plannedVisits
+  includedLabour
+  responseCommitment
+}
+
+class "Fault Report" as FaultReport {
+  reportedDate
+  reportingChannel
+  symptoms
+}
+
+class Fault {
+  description
+  priority
+  assessedResponse
+  status
+}
+
+class Finding {
+  description
+  readings [0..1]
+}
+
+class "Work Order" as WorkOrder {
+  description
+  status
+}
+
+class Visit {
+  scheduledDate
+  status
+  outcome
+  workCompleted
+  internalNote [0..1]
+}
+
+class Check {
+  checkType
+  result
+  recordedDate
+}
+
+class "Staff Member" as StaffMember {
+  name
+  role
+  authorisations
+}
+
+class Part {
+  partNumber
+  description
+  quantityInStock
+}
+
+class "Part Allocation" as PartAllocation {
+  quantity
+  allocationDate
+  allocationStatus
+}
+
+class Quotation {
+  issueDate
+  approvalStatus
+  approvalMethod [0..1]
+  approvalDate [0..1]
+}
+
+Customer "1" -- "0..*" Site : owns >
+Site "1" -- "0..*" Installation : contains >
+Installation "1" -- "0..*" Component : consists of >
+Customer "1" -- "0..*" ServiceAgreement : holds >
+ServiceAgreement "0..*" -- "0..*" Installation : covers >
+Customer "1" -- "0..*" FaultReport : submits >
+FaultReport "0..*" -- "0..*" Fault : relates to >
+Installation "1" -- "0..*" Fault : is affected by >
+Installation "1" -- "0..*" WorkOrder : is subject of >
+WorkOrder "1" -- "0..*" Visit : is carried out through >
+Visit "0..*" -- "0..*" StaffMember : is attended by >
+Visit "1" -- "0..*" Finding : identifies >
+Finding "0..*" -- "0..1" Fault : confirms >
+Visit "1" -- "0..*" Check : records >
+WorkOrder "1" -- "0..*" PartAllocation : receives >
+Part "1" -- "0..*" PartAllocation : is allocated in >
+WorkOrder "1" -- "0..*" Quotation : is priced by >
+StaffMember "0..1" -- "0..*" Installation : approved return to service of >
+@enduml
