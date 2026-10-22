@@ -27,7 +27,6 @@ Acceptance criteria:
 - AC-02. The required skills and authorisations for the work are identifiable before assignment.
 - AC-03. Work requiring multiple skills can be assigned to more than one suitably authorised technician.
 
-Gherkin: –  
 Questions / dependencies: Q-07, Q-08, Q-09
 
 **US-03. Reallocate parts between jobs**  
@@ -41,7 +40,6 @@ Acceptance criteria:
 - AC-02. Reallocation updates the recorded allocation for both affected work orders.
 - AC-03. The system identifies when the requested quantity is not available for allocation.
 
-Gherkin: –  
 Questions / dependencies: Q-10, Q-11
 
 **US-04. Record visit findings and outcomes**  
@@ -55,8 +53,7 @@ Acceptance criteria:
 - AC-02. The visit outcome identifies whether the fault was resolved or further action is required.
 - AC-03. An unresolved fault can be linked to follow-up work without being recorded as resolved.
 - AC-04. Visit information can be saved when connectivity is unavailable and synchronised later, subject to conflict handling.
-
-Gherkin: –  
+ 
 Questions / dependencies: Q-13, Q-15, A-05
 
 **US-05. Provide verified customer updates**  
@@ -69,6 +66,5 @@ Acceptance criteria:
 - AC-01. Customer updates can include verified work progress and recorded visit outcomes.
 - AC-02. Unverified technical conclusions are not presented as confirmed facts.
 - AC-03. Internal commercial notes and safety discussions are excluded from customer-facing updates by default.
-
-Gherkin: –  
+ 
 Questions / dependencies: Q-17, A-04
