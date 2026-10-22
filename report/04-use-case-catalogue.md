@@ -1,6 +1,6 @@
-# 6. Use-case model
+# 4. Use-case model
 
-## 6.1 System boundary and actors
+## 4.1 System boundary and actors
 
 System: **ARC Maintenance Coordination System**
 
@@ -9,7 +9,7 @@ Offstage stakeholders (customer, parts suppliers and manufacturers, site contact
 
 ![Use-case model](../diagrams/use-case-model.png)
 
-## 6.2 Use-case catalogue
+## 4.2 Use-case catalogue
 
 **UC-01. Register Fault Report**  
 Primary actor: Office staff  
@@ -59,7 +59,7 @@ Related: FR-11, S-09
 Primary actor: Office staff  
 Related: FR-12, S-10
 
-## 6.3 Detailed use case
+## 4.3 Detailed use case
 
 UC-06. Authorise Return to Service
 
