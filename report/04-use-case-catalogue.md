@@ -61,53 +61,47 @@ Related: FR-12, S-10
 
 ## 4.3 Detailed use case
 
-UC-06. Authorise Return to Service
+### UC-06. Authorise Return to Service
 
-Primary actor: Technical lead
-Scope: ARC Maintenance Coordination System
-Related: FR-10, FR-12, NFR-03, BR-02, BR-05, A-02, Q-12, Q-13, P-05
+**Primary actor:** Technical lead  
+**Scope:** ARC Maintenance Coordination System  
+**Related:** FR-10, FR-12, NFR-03, BR-02, BR-05, A-02, Q-12, Q-13, P-05
 
-Stakeholders and interests
+**Stakeholders and interests**
+- Technical lead: wants to ensure that equipment returns to service only when it is safe and all required checks are complete.
+- Technician: wants the checks and work they recorded to be reviewed and their outcome acknowledged.
+- Office staff: need an up-to-date status to plan follow-up work and inform the customer.
+- Customer (offstage): needs to know whether the installation is safe to use and what is still outstanding.
+- Service manager: needs visibility of installations awaiting return-to-service approval.
 
-Technical lead: wants to ensure that equipment returns to service only when it is safe and all required checks are complete.
-Technician: wants the checks and work they recorded to be reviewed and their outcome acknowledged.
-Office staff: need an up-to-date status to plan follow-up work and inform the customer.
-Customer (offstage): needs to know whether the installation is safe to use and what is still outstanding.
-Service manager: needs visibility of installations awaiting return-to-service approval.
+**Preconditions**
+1. The technician has completed the required checks and recorded the results (UC-08).
+2. The installation and the work performed are recorded in the system.
+3. The installation is awaiting a return-to-service decision.
 
-Preconditions
-
-The technician has completed the required checks and recorded the results (UC-08).
-The installation and the work performed are recorded in the system.
-The installation is awaiting a return-to-service decision.
-
-Trigger
+**Trigger**  
 The technical lead receives a request to approve the return of the installation to service.
 
-Main success scenario
+**Main success scenario**
+1. The technical lead selects an installation awaiting return-to-service approval.
+2. The system presents the recorded check results, completed work and any issues found.
+3. The technical lead reviews the results and the required supporting evidence.
+4. The technical lead confirms that the requirements for return to service are met.
+5. The system verifies that the user is authorised to approve return to service and that the required check records are complete.
+6. The system records the decision together with the approving user, date and time.
+7. The system changes the installation status to *Approved for return to service*.
+8. The system makes the updated status available to office staff for preparing the customer update (UC-12).
 
-The technical lead selects an installation awaiting return-to-service approval.
-The system presents the recorded check results, completed work and any issues found.
-The technical lead reviews the results and the required supporting evidence.
-The technical lead confirms that the requirements for return to service are met.
-The system verifies that the user is authorised to approve return to service and that the required check records are complete.
-The system records the decision together with the approving user, date and time.
-The system changes the installation status to Approved for return to service.
-The system makes the updated status available to office staff for preparing the customer update (UC-12).
+**Alternative flows**
+- **4a. Approval refused:** The technical lead records the reason for refusal. The system saves the decision, keeps the installation out of normal service and records the further action required.
+- **4b. Temporary operation only:** The technical lead records that only temporary operation is permitted, together with its limitations. The system records the temporary status and does not mark the installation as fully returned to service.
 
-Alternative flows
+**Exceptions**
+- **5a. Check records incomplete:** The system does not allow the return to service to be approved and identifies which check records are missing. The use case ends without a status change.
+- **5b. User not authorised:** The system rejects the approval and does not change the installation status. The use case ends.
 
-4a. Approval refused: The technical lead records the reason for refusal. The system saves the decision, keeps the installation out of normal service and records the further action required.
-4b. Temporary operation only: The technical lead records that only temporary operation is permitted, together with its limitations. The system records the temporary status and does not mark the installation as fully returned to service.
+**Postconditions**
+- **Success:** The decision is recorded and linked to the installation and its check records; the installation status is updated; the change is captured in the audit trail (NFR-03).
+- **Customer information:** A verified update on the outcome and status can be prepared for the customer, excluding internal commercial notes and unverified technical conclusions (FR-12, BR-05).
 
-Exceptions
-
-5a. Check records incomplete: The system does not allow the return to service to be approved and identifies which check records are missing. The use case ends without a status change.
-5b. User not authorised: The system rejects the approval and does not change the installation status. The use case ends.
-
-Postconditions
-
-Success: The decision is recorded and linked to the installation and its check records; the installation status is updated; the change is captured in the audit trail (NFR-03).
-Customer information: A verified update on the outcome and status can be prepared for the customer, excluding internal commercial notes and unverified technical conclusions (FR-12, BR-05).
-
-Open issue: Who counts as an authorised person for each type of work is not yet confirmed. Until then, A-02 applies (Q-12).
+**Open issue:** Who counts as an authorised person for each type of work is not yet confirmed. Until then, A-02 applies (Q-12).

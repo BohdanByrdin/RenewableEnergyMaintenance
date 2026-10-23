@@ -1,4 +1,4 @@
-# 8. Traceability
+# 6. Traceability
 
 The matrix links each functional requirement back to the problem, desired outcome and scope item it addresses, and forward to the business rule, use case, Gherkin scenario and domain concepts that realise it.
 

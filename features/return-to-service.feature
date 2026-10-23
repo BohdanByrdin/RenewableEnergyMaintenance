@@ -10,12 +10,14 @@ Feature: Authorise return to service
 
   Rule: Return to service requires complete checks and an authorised approver (BR-02)
 
+    @RTS-01
     Scenario: Approve return to service when all checks are recorded
       Given all required checks for "INS-204" have been recorded as passed
       When "Aoife Byrne" approves the return to service
       Then the status of "INS-204" is "Approved for return to service"
       And the decision is recorded with "Aoife Byrne" as the approver and the current date and time
 
+    @RTS-02
     Scenario: Refuse approval when a required check is missing
       Given the insulation resistance test for "INS-204" has not been recorded
       When "Aoife Byrne" attempts to approve the return to service
@@ -23,6 +25,7 @@ Feature: Authorise return to service
       And the status of "INS-204" remains "Awaiting return-to-service approval"
       And the missing insulation resistance test is identified
 
+    @RTS-03
     Scenario: Reject approval by a user without authority
       Given technician "Liam Murphy" is not authorised to approve return to service
       And all required checks for "INS-204" have been recorded as passed
@@ -32,6 +35,7 @@ Feature: Authorise return to service
 
   Rule: Temporary operation is not a full return to service
 
+    @RTS-04
     Scenario: Allow temporary operation only
       Given the replacement battery module for "INS-204" is awaiting delivery
       And all other required checks for "INS-204" have been recorded as passed

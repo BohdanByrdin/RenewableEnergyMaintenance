@@ -1,6 +1,6 @@
-# 4. Stakeholders and actors
+# 3. Stakeholders and actors
 
-## 4.1 Stakeholder catalogue
+## 3.1 Stakeholder catalogue
 
 Influence indicates how strongly a stakeholder's view is expected to shape the system requirements.
 
@@ -65,7 +65,7 @@ Influence indicates how strongly a stakeholder's view is expected to shape the s
 - Influence: Low–Medium.
 - Evidence: Inferred from F-23 and F-24. The scenario does not identify a separate delivery provider; this stakeholder is retained only if confirmed as distinct from suppliers.
 
-## 4.2 Actor classification
+## 3.2 Actor classification
 
 An actor is a person or external system that directly interacts with the proposed system to achieve a goal. A stakeholder is not automatically an actor.
 
@@ -84,7 +84,7 @@ An actor is a person or external system that directly interacts with the propose
 
 **Supporting actors:** No supporting actors are confirmed, because the scenario does not describe any external system or party interacting directly with the proposed system. This should be reviewed if supplier access or system integrations are added later.
 
-## 4.3 Actor–goal table
+## 3.3 Actor–goal table
 
 | Actor | Type | Goals |
 |-------|------|-------|
@@ -94,7 +94,7 @@ An actor is a person or external system that directly interacts with the propose
 | Technicians | Primary | Access assigned job and site information; record inspection readings, photographs and work completed; record parts used and visit outcomes. Whether technicians may authorise return to service is unresolved (Q-12). |
 | Parts coordinator | Primary | Check spare parts availability; allocate parts to work orders; record stock movements and usage; update records when parts are transferred between jobs. |
 
-## 4.4 Customer access
+## 3.4 Customer access
 
 The scenario states that customers need progress updates and clear information about safety and outstanding work, but it does not say that customers will use the system directly. The customer is therefore treated as an offstage stakeholder, with office staff responsible for communicating approved updates.
 

@@ -1,6 +1,6 @@
-# Requirements and business rules
+# 5. Requirements and business rules
 
-##  Functional requirements
+## 5.1 Functional requirements
 
 **FR-01.** The system shall maintain records of customers, sites, installations and components.
 
@@ -86,7 +86,7 @@ Priority: Should
 Rationale: Keeps customers informed about safety and outstanding work without sharing unverified conclusions or internal notes.  
 Verification: Test – prepare a customer update from a record containing internal notes and verify that only approved information is included.
 
-##  Non-functional requirements
+## 5.2 Non-functional requirements
 
 **NFR-01.** Offline operation  
 The system shall allow technicians to create and update assigned visit records while offline and shall synchronise saved changes within 5 minutes of connectivity being restored.
@@ -122,7 +122,7 @@ Verification: Performance test – simulate 10 concurrent users and confirm that
 
 Numeric targets in NFR-01 and NFR-04 are provisional and must be confirmed with ARC.
 
-##  Business rules
+## 5.3 Business rules
 
 **BR-01.** Work not covered by the customer's service agreement must not begin until the customer has approved the quotation.  
 Status: Provisional – the scenario states that customers "may need" to approve; acceptable evidence of approval is unresolved.  
